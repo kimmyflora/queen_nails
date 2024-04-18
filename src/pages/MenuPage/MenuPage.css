@@ -1,0 +1,64 @@
+.menu-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: linear-gradient(to bottom, #ffffff, #ffcccc);
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .service {
+    margin-bottom: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    border-radius: 8px;
+    
+  }
+  
+  .service h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .service ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .service ul li {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    
+    
+  }
+  
+  .service ul li span {
+    font-weight: bold;
+    color: #ff1493; /* Pink color for prices */
+  }
+  
+  .other {
+    margin-top: 40px;
+  }
+  
+  .other h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .service:hover {
+    background-color: #f8f8f8; /* Light gray background on hover */
+    transform: scale(1.05); /* Scale effect on hover */
+  }
+  
+  h1, h2 {
+    font-family: 'Roboto', sans-serif; /* Use a different font */
+  }
+  
+  .service h2 {
+    font-size: 1.8rem; /* Increase heading size */
+    font-weight: bold; /* Bold font weight */
+  }
+  

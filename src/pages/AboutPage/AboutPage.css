@@ -1,0 +1,23 @@
+
+.about-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .about-section, .history-section, .mission-section, .team-section {
+    margin-bottom: 40px;
+  }
+  
+  h1, h2 {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+  }
+  
+  p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+  
+
+  

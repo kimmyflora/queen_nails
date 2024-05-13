@@ -1,38 +1,35 @@
-.home-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Center items horizontally */
-}
-
 .navbar {
-  background-color: #ffcccc; /* Light pink background */
-  width: 100%; /* Take full width of the container */
-  padding: 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white; 
+  z-index: 1000; /* Adjust as needed */
 }
+body {
+background-color: pink;
+} 
 
 .nav-links {
   list-style: none;
-  display: flex;
-  justify-content: center;
   margin: 0;
   padding: 0;
 }
 
 .nav-links li {
-  margin: 0 1rem;
+  display: inline;
+  
 }
 
 .nav-links li a {
+  color: black; /* Adjust as needed */
   text-decoration: none;
-  color: #333; /* Dark text color */
-  font-size: 1.2rem;
-  transition: color 0.3s ease;
+  padding: 1rem;
+  font-size: 30px;
 }
 
-.nav-links li a:hover {
-  color: #ff1493; /* Deep pink text color on hover */
-}
-
-body{
-  background-color: pink;
+.hero-section {
+  /* Adjust padding or margin to ensure content isn't covered by navbar */
+  padding-top: 60px; /* Adjust according to the height of your navbar */
+  
 }

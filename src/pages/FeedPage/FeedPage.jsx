@@ -12,9 +12,9 @@ export default function FeedPage() {
         </ul>
       </nav>
       <div className="hero-section">
-        <h1 className="hero-title">Welcome to Queen's Nails Salon</h1>
+        <h1 className="hero-title">Welcome to Queen's Nails </h1>
         <p className="hero-description">Discover the latest trends in nail art and pamper yourself with our luxurious nail services.</p>
-        <a href="/menu" className="cta-btn">Explore the available services</a>
+       <h3> <a href="/menu" className="cta-btn">Explore the available services</a></h3>
       </div>
     </div>
   );

@@ -1,23 +1,68 @@
+html, body {
+  font-family: 'Roboto', sans-serif; /* Set default font family */
+  background-color: #ffffff; /* White background color for the entire page */
+  margin: 0; /* Remove default body margin */
+  padding: 0; /* Remove default body padding */
+}
 
-.about-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  .about-section, .history-section, .mission-section, .team-section {
-    margin-bottom: 40px;
-  }
-  
-  h1, h2 {
-    font-family: 'Roboto', sans-serif;
-    color: #333;
-  }
-  
-  p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-  }
-  
+.container {
+  max-width: 500px; /* Adjusted max-width for a smaller container */
+  margin: 20px auto; /* Center the container horizontally and add space above and below */
+  padding: 20px;
+  background-color: #ffcccc; /* Pink background color for the container */
+  border-radius: 10px; /* Add border radius to container */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add box shadow for a subtle effect */
+}
 
-  
+.section {
+  margin-bottom: 40px;
+}
+
+h1, h2 {
+  color: #333; /* Dark gray color for headings */
+  margin-bottom: 10px; /* Add space below headings */
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555; /* Medium gray color for paragraphs */
+}
+
+.team-section table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.team-section th,
+.team-section td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.team-section th {
+  background-color: #f2f2f2; /* Light gray background color for table header */
+}
+
+.team-section tbody tr:nth-child(even) {
+  background-color: #f9f9f9; /* Alternate row background color for better readability */
+}
+
+.social-links ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.social-links ul li {
+  margin-bottom: 10px; /* Add space between social links */
+}
+
+.social-links ul li a {
+  color: #333; /* Dark gray color for social links */
+  text-decoration: none; /* Remove underline from social links */
+  transition: color 0.3s ease; /* Smooth transition for link color */
+}
+
+.social-links ul li a:hover {
+  color: #ff1493; /* Pink color for social links on hover */
+}

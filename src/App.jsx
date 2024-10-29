@@ -5,10 +5,12 @@ import FeedPage from './pages/FeedPage/FeedPage';
 import MenuPage from './pages/MenuPage/MenuPage';
 import PicturePage from "./pages/PicturePage/PicturePage";
 import AboutPage from "./pages/AboutPage/AboutPage";
+import Navbar from "./pages/Navbar/Navbar";
 
 function App() {
   return (
     <Router> {/* Wrap your routes with BrowserRouter */}
+      <Navbar />
       <Routes>
         <Route path="/" element={<FeedPage />} />
         <Route path="/menu" element={<MenuPage />} />

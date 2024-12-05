@@ -1,80 +1,153 @@
+/* General Reset */
 html, body {
-  font-family: 'Roboto', sans-serif; /* Set default font family */
+  font-family: 'Roboto', sans-serif;
   background-color: #ffcccc;
-  margin: 0; /* Remove default body margin */
-  padding: 0; /* Remove default body padding */
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Ensure full height */
+  overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
+/* Container */
+.container {
+  padding-top: 40px; /* Adjust as needed */
+  min-height: 100vh;  /* Make the container take at least the full height of the viewport */
+  background-color: #ffcccc; /* Apply pink background to the container */
+}
+
+
+/* Navbar Styling */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffcccc;
+  z-index: 1000;
+  padding: 20px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 0;
+}
+
+/* Navbar Links */
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.nav-links li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.nav-links li:last-child {
+  margin-right: 0;
+}
+
+.nav-links li a {
+  color: #333;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 8px 15px;
+}
+
+/* Section Styling */
+.about-section, 
+.team-section, 
+.social-links {
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 20px; /* Add some spacing between sections */
+}
+
+/* About Section Styling */
+.about-section h1, 
+.history-section h2, 
+.mission-section h2, 
+.team-section h2, 
+.social-links h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.about-section p, 
+.history-section p, 
+.mission-section p, 
+.team-section p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Team Section Table */
 .team-section table {
   width: 100%;
   border-collapse: collapse;
+  margin-top: 20px;
 }
 
 .team-section th,
 .team-section td {
   padding: 10px;
+  text-align: left;
   border: 1px solid #ddd;
 }
 
 .team-section th {
-  background-color: #f2f2f2; /* Light gray background color for table header */
+  background-color: #f2f2f2;
+  font-weight: bold;
 }
 
 .team-section tbody tr:nth-child(even) {
-  background-color: #f9f9f9; /* Alternate row background color for better readability */
+  background-color: #f9f9f9;
 }
 
+/* Social Links Styling */
 .social-links ul {
   list-style-type: none;
   padding: 0;
 }
 
 .social-links ul li {
-  margin-bottom: 10px; /* Add space between social links */
+  margin-bottom: 10px;
 }
 
 .social-links ul li a {
-  color: #333; /* Dark gray color for social links */
-  text-decoration: none; /* Remove underline from social links */
-  transition: color 0.3s ease; /* Smooth transition for link color */
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .social-links ul li a:hover {
-  color: #ff1493; /* Pink color for social links on hover */
+  color: #ff1493;
 }
 
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #ffcccc; /* Adjust background color */
-  z-index: 1000;
-  padding: 10px 0; /* Add padding for better spacing */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+/* Make sure sections don't extend beyond the viewport */
+section {
+  overflow: hidden; /* Prevent horizontal overflow */
+  padding-bottom: 50px; /* Add space at the bottom of the sections */
 }
 
-.nav-links {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-links li {
-  display: inline;
-  margin-right: 20px; /* Add spacing between nav items */
-}
-
-.nav-links li:last-child {
-  margin-right: 0; /* Remove margin from last nav item */
-}
-
-.nav-links li a {
-  color: #333; /* Adjust text color */
-  text-decoration: none;
-  font-size: 18px; /* Adjust font size */
+/* Additional fixes for viewport fit and content */
+body {
+  overflow-y: auto; /* Ensure vertical scroll is available */
+  height: auto; /* Let the body grow to fit content */
 }
 
 .hero-section {
-  padding-top: 80px; /* Adjust padding to ensure content isn't covered by navbar */
+  padding-top: 100px; /* Adjust for navbar height */
+}
+
+/* If you have images or other elements that need dynamic resizing, add max-width */
+img {
+  max-width: 100%;
+  height: auto;
 }

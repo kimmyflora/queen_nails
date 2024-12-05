@@ -1,8 +1,11 @@
 import React from 'react';
+import "./PicturePage.css";
+
 
 export default function PicturePage() {
   return (
     <div className="picture-container">
+      
       <h1>Nail Pictures</h1>
       <div className="picture-gallery">
         <div className="album">

@@ -1,9 +1,11 @@
+/* Add margin-top to avoid overlap with fixed or positioned nav */
 .menu-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background: linear-gradient(to bottom, #ffffff, #ffcccc);
-  }
+  max-width: 800px;
+  margin: 60px auto 0 auto; /* Pushes content below the navbar */
+  padding: 20px;
+  background: linear-gradient(to bottom, #ffffff, #ffcccc);
+}
+
   
   h1 {
     font-size: 2rem;

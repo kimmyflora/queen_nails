@@ -6,7 +6,7 @@ export default function AboutPage() {
     <div className="container">
       <div className="about-section">
         <h1>About Queen's Nails</h1>
-        <p>Welcome to Queen's Nails Salon, your premier destination for exquisite nail care and pampering services. At Queen's Nails, we strive to provide our clients with the ultimate nail salon experience, combining top-quality products, skilled technicians, and a relaxing atmosphere.</p>
+        <p>Welcome to Queen Nails Salon, your premier destination for exquisite nail care and pampering services. At Queen's Nails, we strive to provide our clients with the ultimate nail salon experience, combining top-quality products, skilled technicians, and a relaxing atmosphere.</p>
       </div>
 
       <div className="spacer"></div> {/* Spacer div */}

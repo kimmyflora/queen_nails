@@ -94,21 +94,6 @@ html, body {
   margin-top: 20px;
 }
 
-.team-section th,
-.team-section td {
-  padding: 10px;
-  text-align: left;
-  border: 1px solid #ddd;
-}
-
-.team-section th {
-  background-color: #f2f2f2;
-  font-weight: bold;
-}
-
-.team-section tbody tr:nth-child(even) {
-  background-color: #f9f9f9;
-}
 
 /* Social Links Styling */
 .social-links ul {

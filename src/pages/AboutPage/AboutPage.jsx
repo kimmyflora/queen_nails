@@ -25,32 +25,7 @@ export default function AboutPage() {
 
       <div className="spacer"></div> {/* Spacer div */}
 
-      <div className="team-section">
-        <h2>Meet Our Team</h2>
-        <p>Our team of skilled nail technicians are dedicated to providing you with the highest level of care and expertise. With years of experience and a passion for creativity, our team members will help you achieve the perfect manicure and pedicure tailored to your unique style and preferences.</p>
-        <table>
-          <thead>
-            <tr>
-              <th>Team Member</th>
-              <th>Specialty</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Amy, Cindy, Leena, Kimmy, Tio</td>
-              <td>Acrylic</td>
-            </tr>
-            <tr>
-              <td>Tammy, Kelly, John, Kathy, Mimi, Jenny</td>
-              <td>Pedicures</td>
-            </tr>
-            <tr>
-              <td>Helen</td>
-              <td>Waxing</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+    
 
       <div className="spacer"></div> {/* Spacer div */}
 

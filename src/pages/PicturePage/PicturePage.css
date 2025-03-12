@@ -1,6 +1,19 @@
-
 h1 {
-    display: block;
-    color: black;
-  }
-  
+  display: block;
+  color: black;
+  font-size: 24px;
+  text-align: center;
+}
+
+h2 {
+  color: black;
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.album {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #f9f9f9;
+}

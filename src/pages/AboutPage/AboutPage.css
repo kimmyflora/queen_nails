@@ -1,138 +1,113 @@
-/* General Reset */
-html, body {
-  font-family: 'Roboto', sans-serif;
-  background-color: #ffcccc;
-  margin: 0;
-  padding: 0;
-  height: 100%; /* Ensure full height */
-  overflow-x: hidden; /* Prevent horizontal scroll */
-}
-
-/* Container */
-.container {
-  padding-top: 40px; /* Adjust as needed */
-  min-height: 100vh;  /* Make the container take at least the full height of the viewport */
-  background-color: #ffcccc; /* Apply pink background to the container */
-}
-
-
-/* Navbar Styling */
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #ffcccc;
-  z-index: 1000;
-  padding: 20px 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin: 0;
-}
-
-/* Navbar Links */
-.nav-links {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+/* General Page Layout */
+.about-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px;
   text-align: center;
 }
 
-.nav-links li {
-  display: inline-block;
-  margin-right: 20px;
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(to right, #ff99cc, #ff6699);
+  color: white;
+  padding: 50px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.nav-links li:last-child {
-  margin-right: 0;
-}
-
-.nav-links li a {
-  color: #333;
-  text-decoration: none;
-  font-size: 18px;
-  padding: 8px 15px;
-}
-
-/* Section Styling */
-.about-section, 
-.team-section, 
-.social-links {
-  margin: 0 auto;
-  max-width: 800px;
-  padding: 20px;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin-top: 20px; /* Add some spacing between sections */
-}
-
-/* About Section Styling */
-.about-section h1, 
-.history-section h2, 
-.mission-section h2, 
-.team-section h2, 
-.social-links h2 {
-  font-size: 2rem;
+.hero-section h1 {
+  font-size: 2.5rem;
   margin-bottom: 10px;
-  color: #333;
 }
 
-.about-section p, 
-.history-section p, 
-.mission-section p, 
-.team-section p {
+.hero-section p {
+  font-size: 1.2rem;
+}
+
+/* About Content Section */
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 40px;
+  gap: 30px;
+}
+
+.about-text {
+  flex: 1;
+  text-align: left;
+}
+
+.about-text h2 {
+  font-size: 2rem;
+  color: #ff1493;
+  margin-bottom: 10px;
+}
+
+.about-text p {
   font-size: 1.2rem;
   line-height: 1.6;
-  color: #333;
-  margin-bottom: 20px;
+  color: #555;
 }
 
-/* Team Section Table */
-.team-section table {
+/* Image Styling */
+.about-image {
+  flex: 1;
+  text-align: center;
+}
+
+.about-image img {
   width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
+  max-width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-
-/* Social Links Styling */
-.social-links ul {
-  list-style-type: none;
-  padding: 0;
+/* Mission Section */
+.mission-section {
+  margin-top: 50px;
+  padding: 30px;
+  background: #fff0f5;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.social-links ul li {
-  margin-bottom: 10px;
-}
-
-.social-links ul li a {
-  color: #333;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.social-links ul li a:hover {
+.mission-section h2 {
+  font-size: 2rem;
   color: #ff1493;
 }
 
-/* Make sure sections don't extend beyond the viewport */
-section {
-  overflow: hidden; /* Prevent horizontal overflow */
-  padding-bottom: 50px; /* Add space at the bottom of the sections */
+.mission-section p {
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.6;
 }
 
-/* Additional fixes for viewport fit and content */
-body {
-  overflow-y: auto; /* Ensure vertical scroll is available */
-  height: auto; /* Let the body grow to fit content */
+/* Social Media Section */
+.social-section {
+  margin-top: 40px;
 }
 
-.hero-section {
-  padding-top: 100px; /* Adjust for navbar height */
+.social-section h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
 }
 
-/* If you have images or other elements that need dynamic resizing, add max-width */
-img {
-  max-width: 100%;
-  height: auto;
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-links a {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ff1493;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #ff0066;
+  transform: scale(1.1);
 }

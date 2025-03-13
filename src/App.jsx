@@ -1,26 +1,24 @@
-import { Route, Routes } from "react-router-dom";
-import { BrowserRouter as Router } from 'react-router-dom';
+import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
 import './App.css';
-import FeedPage from './pages/FeedPage/FeedPage';
+import HomePage from './pages/HomePage/HomePage'; 
 import MenuPage from './pages/MenuPage/MenuPage';
-import PicturePage from "./pages/PicturePage/PicturePage";
 import AboutPage from "./pages/AboutPage/AboutPage";
-import TeamPage from "./pages/TeamPage/TeamPage"
-
-import Navbar from "./pages/Navbar/Navbar";
+import TeamPage from "./pages/TeamPage/TeamPage";
+import Layout from "./pages/LayoutPage/LayoutPage"; 
+import PicturePage from "./pages/PicturePage/PicturePage"; // Fixed import
 
 function App() {
   return (
-    <Router> {/* Wrap your routes with BrowserRouter */}
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<FeedPage />} />
-        <Route path="/menu" element={<MenuPage />} />
-        <Route path="/pictures" element={<PicturePage /> }/>
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/team" element={<TeamPage/>} />
-        
-      </Routes>
+    <Router>
+      <Layout> 
+        <Routes>
+          <Route path="/" element={<HomePage />} /> {/* Home Page */}
+          <Route path="/menu" element={<MenuPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/team" element={<TeamPage />} />
+          <Route path="/pictures" element={<PicturePage />} /> {/* Fixed syntax */}
+        </Routes>
+      </Layout>
     </Router>
   );
 }

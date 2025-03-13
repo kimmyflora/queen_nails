@@ -1,0 +1,49 @@
+.footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 8px 0;
+  width: 100vw;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  font-size: 12px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer p {
+  margin: 2px 0;
+  font-size: 14px;
+}
+
+.footer p strong,
+.footer p a {
+  font-size: 16px; /* Makes address & phone number bigger */
+  font-weight: bold;
+}
+/* Adjust social media section */
+.social-links {
+  margin-top: 8px;
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Increased spacing between icons */
+  padding: 5px 0;
+}
+
+.social-links a {
+  color: pink;
+  font-size: 24px; /* Increased icon size */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-links a:hover {
+  transform: scale(1.2);
+  color: #ffcc00;
+}

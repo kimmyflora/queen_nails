@@ -3,3 +3,18 @@
   padding-top: 80px; /* Adjust padding to ensure content isn't covered by navbar */
 }
 
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensures the layout fills the full viewport */
+}
+
+main {
+  flex-grow: 1; /* Pushes the footer to the bottom */
+}

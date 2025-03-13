@@ -3,41 +3,43 @@ import "./AboutPage.css";
 
 export default function AboutPage() {
   return (
-    <div className="container">
-      <div className="about-section">
+    <div className="about-container">
+      {/* Hero Section */}
+      <div className="hero-section">
         <h1>About Queen's Nails</h1>
-        <p>Welcome to Queen Nails Salon, your premier destination for exquisite nail care and pampering services. At Queen's Nails, we strive to provide our clients with the ultimate nail salon experience, combining top-quality products, skilled technicians, and a relaxing atmosphere.</p>
+        <p>Your trusted salon for luxury nail care and beauty services.</p>
       </div>
 
-      <div className="spacer"></div> {/* Spacer div */}
-
-      <div className="history-section">
-        <h2>Our History</h2>
-        <p>At Queen Nails, a cozy nail salon nestled in the heart of downtown, the family-run business is a labor of love. Husband and wife duo, work alongside their daughter Kimmy to create a warm, inviting atmosphere where clients can escape the stresses of everyday life. With a keen eye for detail and a passion for their craft, this tight-knit team takes pride in providing personalized services that leave every customer feeling pampered and beautiful.</p>
+      {/* About Content */}
+      <div className="about-content">
+        <div className="about-text">
+          <h2>Our Story</h2>
+          <p>
+            At Queen's Nails, we believe that beauty is about self-care and confidence.
+            Our family-run salon is a labor of love, operated by a dedicated team
+            that strives to create a warm and inviting atmosphere for all our clients.
+          </p>
+        </div>
       </div>
 
-      <div className="spacer"></div> {/* Spacer div */}
-
+      {/* Mission Section */}
       <div className="mission-section">
         <h2>Our Mission</h2>
-        <p>At Queen's Nails, our mission is to exceed our clients' expectations by delivering exceptional nail care services in a warm and inviting environment. We are committed to providing personalized attention, innovative techniques, and impeccable sanitation practices to ensure the health and satisfaction of every client.</p>
+        <p>
+          Our goal is to provide the highest quality nail services while maintaining
+          a relaxing and enjoyable experience for our clients.
+        </p>
       </div>
 
-      <div className="spacer"></div> {/* Spacer div */}
-
-    
-
-      <div className="spacer"></div> {/* Spacer div */}
-
-      <div className="social-links">
+      {/* Social Media */}
+      <div className="social-section">
         <h2>Follow Us</h2>
-        <ul>
-          <li><a href="https://www.instagram.com/queen_nails240/">Instagram</a></li>
-          <li><a href="https://www.facebook.com/queennails240">Facebook</a></li>
-          <li><a href="https://www.yelp.com/biz/queen-nails-anaheim-4">Yelp</a></li>
-        </ul>
+        <div className="social-links">
+          <a href="https://www.instagram.com/queen_nails240/" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://www.facebook.com/queennails240" target="_blank" rel="noopener noreferrer">Facebook</a>
+          <a href="https://www.yelp.com/biz/queen-nails-anaheim-4" target="_blank" rel="noopener noreferrer">Yelp</a>
+        </div>
       </div>
-
     </div>
   );
 }

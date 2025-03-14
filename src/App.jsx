@@ -5,7 +5,7 @@ import MenuPage from './pages/MenuPage/MenuPage';
 import AboutPage from "./pages/AboutPage/AboutPage";
 import TeamPage from "./pages/TeamPage/TeamPage";
 import Layout from "./pages/LayoutPage/LayoutPage"; 
-import PicturePage from "./pages/PicturePage/PicturePage"; // Fixed import
+
 
 function App() {
   return (
@@ -16,7 +16,6 @@ function App() {
           <Route path="/menu" element={<MenuPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/team" element={<TeamPage />} />
-          <Route path="/pictures" element={<PicturePage />} /> {/* Fixed syntax */}
         </Routes>
       </Layout>
     </Router>

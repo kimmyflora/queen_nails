@@ -6,7 +6,7 @@ export default function Layout({ children }) {
   return (
     <div className="layout">
       <Navbar />
-      <div className="content">{children}</div> {/* This ensures page content is visible */}
+      <div className="content">{children}</div>
       <FooterPage />
     </div>
   );

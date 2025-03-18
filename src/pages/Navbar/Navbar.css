@@ -1,34 +1,123 @@
-/* Styles for the navigation bar */
+/* src/components/Navbar/Navbar.css */
 .navbar {
-    background-color: #ffcccc;
+  background-color: #ffcccc;
+  padding: 10px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100vw; /* Full viewport width */
+  position: sticky;
+  top: 0;
+  left: 0; /* Aligns to left edge */
+  z-index: 1000;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  width: 100%;
+}
+
+.nav-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  flex-shrink: 0;
+}
+
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+  flex-shrink: 0;
+}
+
+.nav-links li {
+  display: inline;
+}
+
+.nav-links li a {
+  color: #333;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #ff1493;
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #333;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .navbar {
     padding: 10px 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
-  
+
+  .navbar-container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 1rem;
+  }
+
+  .nav-brand {
+    font-size: 1.3rem;
+  }
+
   .nav-links {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    text-align: center;
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    padding: 10px 0;
+    text-align: left;
   }
-  
+
+  .nav-links.active {
+    display: flex;
+  }
+
   .nav-links li {
-    display: inline;
-    margin-right: 20px;
-  }
-  
-  .nav-links li:last-child {
+    display: block;
     margin-right: 0;
   }
-  
+
   .nav-links li a {
-    color: #333;
-    text-decoration: none;
-    font-size: 18px;
-    transition: color 0.3s ease;
+    font-size: 16px;
+    padding: 10px 1rem;
+    display: block;
   }
-  
-  .nav-links li a:hover {
-    color: #ff1493;
+
+  .nav-toggle {
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 10px;
   }
-  
+}
+
+@media (max-width: 480px) {
+  .nav-brand {
+    font-size: 1.1rem;
+  }
+
+  .nav-links li a {
+    font-size: 14px;
+  }
+
+  .nav-toggle {
+    font-size: 1.2rem;
+  }
+}

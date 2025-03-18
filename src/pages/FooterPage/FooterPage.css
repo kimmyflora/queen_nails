@@ -2,48 +2,54 @@
   background-color: #333;
   color: white;
   text-align: center;
-  padding: 8px 0;
-  width: 100vw;
+  padding: 10px 0;
+  width: 100vw; /* Full viewport width */
   position: relative;
   bottom: 0;
   left: 0;
-  font-size: 12px;
-}
-
-.footer-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.footer p {
-  margin: 2px 0;
   font-size: 14px;
 }
 
-.footer p strong,
-.footer p a {
-  font-size: 16px; /* Makes address & phone number bigger */
-  font-weight: bold;
+.footer p {
+  margin: 5px 0;
 }
-/* Adjust social media section */
+
 .social-links {
-  margin-top: 8px;
+  margin-top: 5px;
   display: flex;
   justify-content: center;
-  gap: 20px; /* Increased spacing between icons */
-  padding: 5px 0;
+  gap: 12px;
 }
 
 .social-links a {
-  color: pink;
-  font-size: 24px; /* Increased icon size */
-  transition: transform 0.3s ease, color 0.3s ease;
+  color: white;
+  font-size: 20px;
+  transition: transform 0.2s ease, color 0.2s ease;
 }
 
 .social-links a:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
   color: #ffcc00;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    font-size: 12px;
+    padding: 8px 0;
+  }
+
+  .social-links a {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    font-size: 10px;
+  }
+
+  .social-links a {
+    font-size: 16px;
+    gap: 10px;
+  }
 }

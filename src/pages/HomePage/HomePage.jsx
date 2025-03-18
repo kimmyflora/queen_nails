@@ -1,6 +1,6 @@
 import "./HomePage.css";
-import React from 'react';
-import { FaHandSparkles, FaSpa, FaPalette } from "react-icons/fa"; // Import icons
+import React from "react";
+import { FaHandSparkles, FaSpa, FaPalette } from "react-icons/fa";
 
 export default function HomePage() {
   return (
@@ -16,7 +16,7 @@ export default function HomePage() {
 
       {/* Featured Services Section */}
       <div className="services-section">
-        <h2>Our Services</h2>
+        <h2>Our Signature Services</h2>
         <div className="services-grid">
           <div className="service-card">
             <FaHandSparkles className="service-icon" />

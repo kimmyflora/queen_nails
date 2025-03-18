@@ -62,13 +62,13 @@ select:focus {
 }
 
 .nail-tech-select option {
-  padding: 10px; /* This doesn't work in all browsers, but included for compatibility */
+  padding: 10px; /* Limited browser support */
   background-color: #fff;
   color: #333;
 }
 
 .nail-tech-select option:hover {
-  background-color: #f0f0f0; /* Note: Browser support for this is limited */
+  background-color: #f0f0f0; /* Limited browser support */
 }
 
 .submit-btn {
@@ -79,7 +79,8 @@ select:focus {
   border-radius: 4px;
   font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: transform 0.2s ease, background-color 0.3s ease, box-shadow 0.2s ease; /* Added transform and shadow transitions */
+  position: relative; /* For smooth movement */
 }
 
 .submit-btn:disabled {
@@ -88,7 +89,9 @@ select:focus {
 }
 
 .submit-btn:hover:not(:disabled) {
-  background-color: #45a049;
+  background-color: #ff69b4; /* Darker pink for contrast (hot pink) */
+  transform: translateY(-3px) scale(1.05); /* Lifts up 3px and slightly scales */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow for depth */
 }
 
 /* Style for react-datepicker */

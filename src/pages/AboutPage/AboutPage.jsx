@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import "./AboutPage.css";
 
 export default function AboutPage() {
@@ -19,6 +19,9 @@ export default function AboutPage() {
             Our family-run salon is a labor of love, operated by a dedicated team
             that strives to create a warm and inviting atmosphere for all our clients.
           </p>
+        </div>
+        <div className="about-image">
+          <img src="https://via.placeholder.com/400x400?text=Nail+Salon+Team" alt="Our Team" />
         </div>
       </div>
 

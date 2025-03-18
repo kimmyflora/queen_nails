@@ -43,6 +43,8 @@ export default function MenuPage() {
                             <li>Lip Waxing <span>$8</span></li>
                             <li>Eyebrow Waxing <span>$12</span></li>
                             <li>Gel Color Additional <span>$10</span></li>
+                            <li>Gel Removal <span>$5</span></li>
+                            <li>Nail Removal <span>$15</span></li>
                         </ul>
                     </div>
                 </div>

@@ -1,6 +1,7 @@
 import "./HomePage.css";
 import React from "react";
 import { FaHandSparkles, FaSpa, FaPalette } from "react-icons/fa";
+import MapImage from "/src/assets/map.png"; // Ensure this matches your file
 
 export default function HomePage() {
   return (
@@ -39,8 +40,25 @@ export default function HomePage() {
       {/* Contact Section */}
       <div className="contact-section">
         <h2>Visit Us</h2>
-        <p>📍 240 W Lincoln Ave, Anaheim, CA 92805</p>
-        <p>📞 <a href="tel:+17145351019">(714) 535-1019</a></p>
+        <div className="contact-details">
+          <div className="contact-info">
+            <p>📍 240 W Lincoln Ave, Anaheim, CA 92805</p>
+            <p>📞 <a href="tel:+17145351019">(714) 535-1019</a></p>
+          </div>
+          <div className="map-link">
+            <a
+              href="https://www.google.com/maps/place/240+W+Lincoln+Ave,+Anaheim,+CA+92805"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src={MapImage}
+                alt="Map of Queen's Nails"
+                className="map-image"
+              />
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   );

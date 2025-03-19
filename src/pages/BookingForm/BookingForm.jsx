@@ -24,15 +24,14 @@ export default function BookingForm() {
   }, []);
 
   const getOperatingHours = (dateStr) => {
-    if (!dateStr) return { minTime: "09:00", maxTime: "18:00" }; // Default Mon-Fri
+    if (!dateStr) return { minTime: "09:00", maxTime: "18:00" };
     const date = new Date(dateStr);
     const day = date.getDay();
-    if (day === 6) return { minTime: "09:00", maxTime: "17:00" }; // Saturday: 9 AM - 5 PM
-    else if (day === 0) return { minTime: "10:00", maxTime: "16:00" }; // Sunday: 10 AM - 4 PM
-    else return { minTime: "09:00", maxTime: "18:00" }; // Mon-Fri: 9 AM - 6 PM
+    if (day === 6) return { minTime: "09:00", maxTime: "17:00" }; // Saturday
+    else if (day === 0) return { minTime: "10:00", maxTime: "16:00" }; // Sunday
+    else return { minTime: "09:00", maxTime: "18:00" }; // Mon-Fri
   };
 
-  // Generate time slots with half-hour intervals in 12-hour format
   const getTimeSlots = (dateStr) => {
     const { minTime, maxTime } = getOperatingHours(dateStr);
     const minHour = parseInt(minTime.split(":")[0], 10);
@@ -42,39 +41,34 @@ export default function BookingForm() {
     for (let hour = minHour; hour <= maxHour; hour++) {
       const period = hour < 12 ? "AM" : "PM";
       const displayHour = hour === 0 ? 12 : hour > 12 ? hour - 12 : hour;
-      
-      // Full hour (e.g., 9:00 AM)
       slots.push(`${displayHour}:00 ${period}`);
-      
-      // Half hour (e.g., 9:30 AM), but only if within maxTime
       if (hour < maxHour || (hour === maxHour && maxTime.endsWith(":30"))) {
         slots.push(`${displayHour}:30 ${period}`);
       }
     }
-    
     return slots;
   };
 
   const getClosedDates = (year) => {
     const dates = [
-      `${year}-01-01`,
-      `${year}-07-04`,
-      `${year}-12-25`,
+      `${year}-01-01`, // New Year's Day
+      `${year}-07-04`, // 4th of July
+      `${year}-12-25`, // Christmas
     ];
-    const may = new Date(year, 4, 31);
+    const may = new Date(year, 4, 31); // Memorial Day
     while (may.getDay() !== 1) may.setDate(may.getDate() - 1);
     dates.push(`${year}-05-${String(may.getDate()).padStart(2, "0")}`);
-    const sept = new Date(year, 8, 1);
+    const sept = new Date(year, 8, 1); // Labor Day
     while (sept.getDay() !== 1) sept.setDate(sept.getDate() + 1);
     dates.push(`${year}-09-${String(sept.getDate()).padStart(2, "0")}`);
-    const nov = new Date(year, 10, 1);
+    const nov = new Date(year, 10, 1); // Thanksgiving
     let thursdays = 0;
     while (thursdays < 4) {
       if (nov.getDay() === 4) thursdays++;
       if (thursdays < 4) nov.setDate(nov.getDate() + 1);
     }
     dates.push(`${year}-11-${String(nov.getDate()).padStart(2, "0")}`);
-    const easter = new Date(year, 3, 1);
+    const easter = new Date(year, 3, 1); // Easter
     while (easter.getDay() !== 0) easter.setDate(easter.getDate() + 1);
     dates.push(`${year}-04-${String(easter.getDate()).padStart(2, "0")}`);
     return dates;
@@ -216,11 +210,33 @@ export default function BookingForm() {
 
   return (
     <div className="booking-container">
-      <h2>Book Your Appointment</h2>
-      <p>Mon - Fri 9:00 AM - 7:00 PM </p>
-      <p>Sat 9:00 AM - 6:00 PM </p>
-      <p> Sun 10:00 AM - 5:00 PM</p>
-      <p>Closed: New Year's Day, Easter, Memorial Day, 4th of July, Labor Day, Thanksgiving, Christmas</p>
+      <h2 className="page-title">Book Your Appointment</h2>
+      <div className="info-section">
+        <div className="hours-section">
+          <h3>Operating Hours</h3>
+          <ul>
+            <li>Mon - Fri: 9:00 AM - 7:00 PM</li>
+            <li>Sat: 9:00 AM - 6:00 PM</li>
+            <li>Sun: 10:00 AM - 5:00 PM</li>
+          </ul>
+        </div>
+        <div className="closed-section">
+          <h3>Closed Dates</h3>
+          <div className="closed-columns">
+            <ul className="closed-column">
+              <li>New Year's Day</li>
+              <li>Easter</li>
+              <li>Memorial Day</li>
+              <li>4th of July</li>
+            </ul>
+            <ul className="closed-column">
+              <li>Labor Day</li>
+              <li>Thanksgiving</li>
+              <li>Christmas</li>
+            </ul>
+          </div>
+        </div>
+      </div>
       <form onSubmit={handleSubmit} className="booking-form">
         <label>Name:</label>
         <input 

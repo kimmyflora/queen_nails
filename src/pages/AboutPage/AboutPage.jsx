@@ -1,6 +1,6 @@
 import React from "react";
 import "./AboutPage.css";
-import TeamImage from "/src/assets/about-team copy.jpg"; // Exact match to src/assets/teampic.jpg
+import TeamImage from "/src/assets/about-team copy.jpg"; // Corrected path
 
 export default function AboutPage() {
   return (
@@ -39,9 +39,30 @@ export default function AboutPage() {
       <div className="social-section">
         <h2>Follow Us</h2>
         <div className="social-links">
-          <a href="https://www.instagram.com/queen_nails240/" target="_blank" rel="noopener noreferrer">Instagram</a>
-          <a href="https://www.facebook.com/queennails240/" target="_blank" rel="noopener noreferrer">Facebook</a>
-          <a href="https://www.yelp.com/biz/queen-nails-anaheim-4" target="_blank" rel="noopener noreferrer">Yelp</a>
+          <a
+            href="https://www.instagram.com/queen_nails240/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="social-link instagram"
+          >
+            Instagram
+          </a>
+          <a
+            href="https://www.facebook.com/queennails240/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="social-link facebook"
+          >
+            Facebook
+          </a>
+          <a
+            href="https://www.yelp.com/biz/queen-nails-anaheim-4"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="social-link yelp"
+          >
+            Yelp
+          </a>
         </div>
       </div>
     </div>

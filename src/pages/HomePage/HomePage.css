@@ -1,26 +1,24 @@
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap');
-
-/* Reset and Base Styles */
+/* Apply white background to the entire page */
 body {
-  background-color: #fff8f5; /* Soft blush background for elegance */
+  background-color: #fff8f5;
   margin: 0;
   padding: 0;
-  font-family: 'Open Sans', sans-serif;
-  color: #4a4a4a; /* Softer dark gray */
 }
 
 /* Home Page Container */
 .home-container {
-  max-width: 1400px; /* Slightly wider for a spacious feel */
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 0 20px; /* Reduced padding for full-width sections */
+  padding: 0 20px;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
   background-color: #fff8f5;
+  color: #333333;
 }
 
 /* Hero Section */
 .hero-section {
-  background: url('https://via.placeholder.com/1400x600?text=Nail+Salon+Hero+Image') no-repeat center center/cover; /* Replace with your image */
+  background: url("https://via.placeholder.com/1400x600?text=Nail+Salon+Hero+Image") no-repeat center center/cover;
   padding: 120px 20px;
   text-align: center;
   min-height: 400px;
@@ -32,13 +30,13 @@ body {
 }
 
 .hero-section::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.3); /* Subtle overlay for contrast */
+  background: rgba(0, 0, 0, 0.3);
   z-index: 1;
 }
 
@@ -47,35 +45,35 @@ body {
   z-index: 2;
   max-width: 800px;
   padding: 40px;
-  background: rgba(255, 248, 245, 0.9); /* Soft blush with transparency */
+  background: rgba(255, 248, 245, 0.9);
   border-radius: 10px;
   animation: fadeIn 1s ease-in-out;
 }
 
 .hero-section h1 {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 3.5rem;
-  font-weight: 700;
-  color: grey; /* White for contrast on overlay */
   margin-bottom: 20px;
   letter-spacing: 1.5px;
+  font-weight: bold;
   text-transform: uppercase;
+  color: #fff;
 }
 
 .hero-section p {
   font-size: 1.4rem;
-  color: grey;
   margin-bottom: 30px;
   font-weight: 300;
+  color: #fff;
 }
 
 .cta-btn {
   display: inline-block;
-  background: linear-gradient(45deg, #ff6b93, #ff9bb3); /* Soft pink gradient */
+  background: linear-gradient(45deg, #ff6b93, #ff9bb3);
   color: #fff;
   padding: 15px 30px;
   font-size: 1.2rem;
-  border-radius: 25px; /* Rounded button */
+  border-radius: 25px;
   text-decoration: none;
   font-weight: 600;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -89,11 +87,11 @@ body {
 /* Services Section */
 .services-section {
   padding: 80px 20px;
-  background: #fff; /* White for clean contrast */
+  background: #fff;
 }
 
 .services-section h2 {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 2.8rem;
   color: #4a4a4a;
   margin-bottom: 40px;
@@ -115,7 +113,7 @@ body {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: center;
-  border: 1px solid #f5e6e8; /* Subtle blush border */
+  border: 1px solid #f5e6e8;
 }
 
 .service-card:hover {
@@ -124,9 +122,9 @@ body {
 }
 
 .service-card h3 {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 1.8rem;
-  color: #ff6b93; /* Soft pink for headings */
+  color: #ff6b93;
   margin-bottom: 15px;
 }
 
@@ -138,7 +136,7 @@ body {
 
 .service-icon {
   font-size: 48px;
-  color: #ff6b93; /* Soft pink */
+  color: #ff6b93;
   margin-bottom: 20px;
   animation: popIn 0.8s ease-in-out;
 }
@@ -146,35 +144,65 @@ body {
 /* Contact Section */
 .contact-section {
   padding: 60px 20px;
-  background: #f5e6e8; /* Light blush background */
+  background: #f5e6e8;
   border-radius: 15px;
   margin: 60px 0;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
 }
 
 .contact-section h2 {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 2.5rem;
   color: #4a4a4a;
   font-weight: 700;
   margin-bottom: 20px;
 }
 
-.contact-section p {
+.contact-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.contact-info {
+  text-align: left;
+}
+
+.contact-info p {
   font-size: 1.3rem;
   color: #666;
   font-weight: 300;
+  margin: 10px 0;
 }
 
-.contact-section a {
-  color: #ff6b93; /* Soft pink */
+.contact-info a {
+  color: #ff6b93;
   text-decoration: none;
   font-weight: 600;
 }
 
-.contact-section a:hover {
-  color: #ff9bb3; /* Lighter pink */
+.contact-info a:hover {
+  color: #ff9bb3;
   text-decoration: underline;
+}
+
+.map-link {
+  text-align: right;
+}
+
+.map-image {
+  width: 400px; /* Increased from 300px */
+  height: 300px; /* Increased from 200px */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.map-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(255, 107, 147, 0.4);
 }
 
 /* Animations */
@@ -249,8 +277,22 @@ body {
     font-size: 2rem;
   }
 
-  .contact-section p {
-    font-size: 1.1rem;
+  .contact-details {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-info,
+  .map-link {
+    text-align: center;
+    width: 100%;
+  }
+
+  .map-image {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 400px; /* Keeps it from growing too large on small screens */
+    height: 300px;
   }
 }
 

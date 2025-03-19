@@ -48,35 +48,35 @@
   backface-visibility: hidden;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   padding: 20px;
-  text-align: center;
 }
 
 .card-front {
   background-color: #fff;
+  display: flex;
+  flex-direction: column; /* Stack name and specialty vertically */
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
 }
 
 .card-back {
   background-color: pink; /* White background */
   color: #333; /* Dark text color for readability */
   transform: rotateY(180deg);
-  display: flex; /* Flexbox for centering */
-  align-items: center; /* Center vertically */
-  justify-content: center; /* Center horizontally */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 1rem;
   line-height: 1.5;
-  text-align: center; /* Center text alignment */
-  padding: 20px; /* Add padding for spacing */
-  border-radius: 8px; /* Keep the rounded corner effect */
+  text-align: center;
+  padding: 20px;
+  border-radius: 8px;
 }
-
 
 .card-front h3 {
   font-size: 1.5rem;
   color: #333;
+  margin-bottom: 10px; /* Space between name and specialty */
 }
 
 .card-front .specialty {

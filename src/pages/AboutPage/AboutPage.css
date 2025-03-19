@@ -1,5 +1,5 @@
 /* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap");
 
 /* General Page Layout */
 .about-container {
@@ -7,13 +7,13 @@
   margin: 0 auto;
   padding: 0 20px;
   background-color: #fff8f5;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: #4a4a4a;
 }
 
 /* Hero Section */
 .about-container .hero-section {
-  background: url('https://via.placeholder.com/1400x400?text=About+Queen\'s+Nails') no-repeat center center/cover;
+  background: url("https://via.placeholder.com/1400x400?text=About+Queen's+Nails") no-repeat center center/cover;
   padding: 100px 20px;
   text-align: center;
   min-height: 350px;
@@ -26,7 +26,7 @@
 }
 
 .about-container .hero-section::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -37,7 +37,7 @@
 }
 
 .about-container .hero-section h1 {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 3.5rem;
   font-weight: 700;
   color: #fff;
@@ -75,7 +75,7 @@
 }
 
 .about-container .about-text h2 {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 2.5rem;
   color: #ff6b93;
   margin-bottom: 20px;
@@ -118,7 +118,7 @@
 }
 
 .about-container .mission-section h2 {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 2.5rem;
   color: #ff6b93;
   font-weight: 700;
@@ -141,30 +141,53 @@
 }
 
 .about-container .social-section h2 {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 2.5rem;
-  color: #4a4a4a !important; /* Increased specificity with !important */
+  color: #4a4a4a;
   font-weight: 700;
   margin-bottom: 25px;
 }
 
-.about-container .social-links {
+.social-links {
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: 100px; /* Increased from 30px to 50px */
 }
 
-.about-container .social-links a {
+.social-link {
   font-size: 1.3rem;
   font-weight: 600;
-  color: #4a4a4a;
   text-decoration: none;
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.about-container .social-links a:hover {
-  color: #ff69b4;
+.social-link:hover {
   transform: translateY(-3px);
+}
+
+/* Specific Colors for Each Social Link */
+.social-link.instagram {
+  color: #8a3ab9; /* Instagram purple */
+}
+
+.social-link.instagram:hover {
+  color: #bc2a8d; /* Darker purple */
+}
+
+.social-link.facebook {
+  color: #3b5998; /* Facebook blue */
+}
+
+.social-link.facebook:hover {
+  color: #2a4373; /* Darker blue */
+}
+
+.social-link.yelp {
+  color: #d32323; /* Yelp red */
+}
+
+.social-link.yelp:hover {
+  color: #a61c1c; /* Darker red */
 }
 
 /* Animations */
@@ -235,11 +258,12 @@
     font-size: 2rem;
   }
 
-  .about-container .social-links {
-    gap: 20px;
+  .social-links {
+    gap: 30px; /* Reduced for mobile */
+    flex-direction: column;
   }
 
-  .about-container .social-links a {
+  .social-link {
     font-size: 1.1rem;
   }
 }

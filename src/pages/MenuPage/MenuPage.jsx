@@ -31,7 +31,9 @@ export default function MenuPage() {
                         <h2>Nail Art</h2>
                         <ul>
                             <li>French additional <span>$5</span></li>
-                            <li>Designs start at <span>$5</span></li>
+                            <li>Custom Designs start at <span>$5</span></li>
+                            <li>Nail Stickers <span>$5</span></li>
+                            <li>3D Nail Art <span>$9</span></li>
                             <li>Chrome additional <span>$10</span></li>
                         </ul>
                     </div>

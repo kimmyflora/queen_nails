@@ -19,6 +19,7 @@ export default function Navbar() {
           <li><Link to="/menu" onClick={toggleNav}>Menu</Link></li>
           <li><Link to="/team" onClick={toggleNav}>Teams</Link></li>
           <li><Link to="/book" onClick={toggleNav}>Booking</Link></li>
+          <li><Link to="/review" onClick={toggleNav}>Reviews</Link></li>
         </ul>
         <button className="nav-toggle" onClick={toggleNav}>
           {isNavOpen ? "✕" : "☰"}

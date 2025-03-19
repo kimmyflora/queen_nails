@@ -1,0 +1,386 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap');
+
+/* General Container */
+.review-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background-color: #fff8f5;
+  font-family: 'Open Sans', sans-serif;
+  color: #4a4a4a;
+}
+
+/* Hero Section */
+.review-hero {
+  text-align: center;
+  padding: 60px 20px;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+  margin-bottom: 60px;
+}
+
+.review-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  color: #ff6b93;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.review-hero p {
+  font-size: 1.4rem;
+  color: #666;
+  font-weight: 300;
+}
+
+/* Review Form Section */
+.review-form-section {
+  padding: 0 20px;
+  margin-bottom: 80px;
+}
+
+.review-form {
+  background: #fff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.review-form h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  color: #ff6b93;
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #4a4a4a;
+  margin-bottom: 10px;
+}
+
+.form-group select,
+.form-group textarea,
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #e6d5d8;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: 'Open Sans', sans-serif;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.form-group select:focus,
+.form-group textarea:focus,
+.form-group input:focus {
+  outline: none;
+  border-color: #ff6b93;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.star-rating {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.star {
+  font-size: 2rem;
+  color: #ccc;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.star.filled {
+  color: #ff6b93;
+}
+
+.star:hover,
+.star.filled:hover {
+  color: #ff9bb3;
+}
+
+.submit-btn {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(45deg, #ff6b93, #ff9bb3);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.submit-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(255, 107, 147, 0.4);
+}
+
+/* Thank You Section */
+.thank-you {
+  background: #fff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.thank-you h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  color: #ff6b93;
+  margin-bottom: 20px;
+}
+
+.thank-you p {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* Reviews Display Section */
+.reviews-display {
+  padding: 0 20px;
+}
+
+.reviews-display h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  color: #4a4a4a;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.tech-reviews {
+  background: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+}
+
+.tech-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.tech-reviews h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: #ff6b93;
+  font-weight: 700;
+}
+
+.average-rating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.average-rating span {
+  font-size: 1.2rem;
+  color: #4a4a4a;
+  font-weight: 600;
+}
+
+.average-rating .star {
+  font-size: 1.2rem;
+  position: relative;
+}
+
+.average-rating .star.half-filled {
+  color: #ccc; /* Base color for unfilled portion */
+}
+
+.average-rating .star.half-filled::before {
+  content: "★";
+  position: absolute;
+  left: 0;
+  width: 50%; /* Half width */
+  color: #ff6b93; /* Filled portion */
+  overflow: hidden;
+}
+
+.review-card {
+  padding: 20px;
+  border-bottom: 1px solid #f5e6e8;
+  position: relative;
+}
+
+.review-card:last-child {
+  border-bottom: none;
+}
+
+.rating {
+  margin-bottom: 10px;
+}
+
+.rating .star {
+  font-size: 1.5rem;
+}
+
+.comment {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.reviewer {
+  font-size: 1rem;
+  color: #ff6b93;
+  font-style: italic;
+  text-align: right;
+}
+
+.review-date {
+  font-size: 0.9rem;
+  color: #999;
+  font-style: normal;
+  margin-left: 5px;
+}
+
+.no-reviews {
+  font-size: 1.1rem;
+  color: #666;
+  text-align: center;
+  font-style: italic;
+}
+
+.delete-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 6px 12px;
+  background: #ff6b93;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.delete-btn:hover {
+  background: #ff9bb3;
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .review-hero {
+    padding: 40px 15px;
+    margin-bottom: 40px;
+  }
+
+  .review-hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .review-hero p {
+    font-size: 1.2rem;
+  }
+
+  .review-form-section {
+    margin-bottom: 60px;
+  }
+
+  .review-form {
+    padding: 25px;
+  }
+
+  .review-form h2 {
+    font-size: 2rem;
+  }
+
+  .form-group label {
+    font-size: 1.1rem;
+  }
+
+  .star {
+    font-size: 1.8rem;
+  }
+
+  .reviews-display h2 {
+    font-size: 2.5rem;
+  }
+
+  .tech-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .tech-reviews h3 {
+    font-size: 1.8rem;
+  }
+
+  .average-rating span {
+    font-size: 1.1rem;
+  }
+
+  .average-rating .star {
+    font-size: 1.1rem;
+  }
+
+  .review-card {
+    padding: 15px;
+  }
+
+  .delete-btn {
+    padding: 5px 10px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .review-hero h1 {
+    font-size: 2rem;
+  }
+
+  .review-hero p {
+    font-size: 1rem;
+  }
+
+  .review-form h2 {
+    font-size: 1.8rem;
+  }
+
+  .star {
+    font-size: 1.5rem;
+  }
+
+  .reviews-display h2 {
+    font-size: 2rem;
+  }
+}

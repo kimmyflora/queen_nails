@@ -6,6 +6,7 @@ import AboutPage from "./pages/AboutPage/AboutPage";
 import TeamPage from "./pages/TeamPage/TeamPage";
 import Layout from "./pages/LayoutPage/LayoutPage"; 
 import BookingForm from "./pages/BookingForm/BookingForm";
+import ReviewPage from "./pages/ReviewPage/ReviewPage";
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/team" element={<TeamPage />} />
           <Route path="/book" element={<BookingForm />} />
+          <Route path="/review" element={<ReviewPage />} />
         </Routes>
       </Layout>
     </Router>

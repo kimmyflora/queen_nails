@@ -1,5 +1,6 @@
 import React from "react";
 import "./AboutPage.css";
+import TeamImage from "/src/assets/about-team copy.jpg"; // Exact match to src/assets/teampic.jpg
 
 export default function AboutPage() {
   return (
@@ -21,7 +22,7 @@ export default function AboutPage() {
           </p>
         </div>
         <div className="about-image">
-          <img src="https://via.placeholder.com/400x400?text=Nail+Salon+Team" alt="Our Team" />
+          <img src={TeamImage} alt="Our Team at Queen's Nails" />
         </div>
       </div>
 

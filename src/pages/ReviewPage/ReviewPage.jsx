@@ -10,24 +10,27 @@ export default function ReviewPage() {
   });
   const [reviews, setReviews] = useState([]);
   const [submitted, setSubmitted] = useState(false);
-  const [isAdmin, setIsAdmin] = useState(false); // Admin flag
-  const adminPassword = "yourSecretPassword"; // Hardcoded for simplicity
+  const [isAdmin, setIsAdmin] = useState(false);
+  const adminPassword = "Queennails2014"; // Your password
 
   const nailTechs = ["Amy", "Leena", "Kimmy", "Cindy", "Jenny", "Helen", "Mimi", "Tammy", "Kelly", "Kathy", "John"];
 
   useEffect(() => {
     const storedReviews = JSON.parse(localStorage.getItem("nailTechReviews") || "[]");
+    console.log("Loaded reviews:", storedReviews); // Log initial reviews
     setReviews(storedReviews);
-    // Check if admin flag is set (for demo, we'll prompt once)
     const adminCheck = localStorage.getItem("isAdmin");
     if (!adminCheck) {
       const password = prompt("Enter admin password (leave blank if not admin):");
+      console.log("Password entered:", password); // Log password attempt
       if (password === adminPassword) {
         setIsAdmin(true);
         localStorage.setItem("isAdmin", "true");
+        console.log("Admin authenticated");
       }
     } else if (adminCheck === "true") {
       setIsAdmin(true);
+      console.log("Admin already authenticated");
     }
   }, []);
 
@@ -54,6 +57,7 @@ export default function ReviewPage() {
       date: new Date().toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })
     };
     const updatedReviews = [...reviews, newReview];
+    console.log("Submitting review:", newReview); // Log new review
     setReviews(updatedReviews);
     localStorage.setItem("nailTechReviews", JSON.stringify(updatedReviews));
     setSubmitted(true);
@@ -61,14 +65,18 @@ export default function ReviewPage() {
   };
 
   const handleDelete = (id) => {
+    console.log("Attempting to delete review with ID:", id); // Log delete attempt
     if (!isAdmin) {
       alert("Only the admin can delete reviews!");
+      console.log("Delete blocked: Not admin");
       return;
     }
     if (window.confirm("Are you sure you want to delete this review?")) {
       const updatedReviews = reviews.filter(review => review.id !== id);
+      console.log("Updated reviews after deletion:", updatedReviews); // Log after filter
       setReviews(updatedReviews);
       localStorage.setItem("nailTechReviews", JSON.stringify(updatedReviews));
+      console.log("Reviews saved to localStorage:", JSON.parse(localStorage.getItem("nailTechReviews"))); // Log saved state
     }
   };
 

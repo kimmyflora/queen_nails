@@ -10,15 +10,25 @@ export default function ReviewPage() {
   });
   const [reviews, setReviews] = useState([]);
   const [submitted, setSubmitted] = useState(false);
-  const [lastSubmitTime, setLastSubmitTime] = useState(null); // Track last submission time
-  const COOLDOWN_PERIOD = 300000; // 5 minutes in milliseconds
+  const [isAdmin, setIsAdmin] = useState(false); // Admin flag
+  const adminPassword = "yourSecretPassword"; // Hardcoded for simplicity
 
   const nailTechs = ["Amy", "Leena", "Kimmy", "Cindy", "Jenny", "Helen", "Mimi", "Tammy", "Kelly", "Kathy", "John"];
 
-  // Load reviews from localStorage on mount
   useEffect(() => {
     const storedReviews = JSON.parse(localStorage.getItem("nailTechReviews") || "[]");
     setReviews(storedReviews);
+    // Check if admin flag is set (for demo, we'll prompt once)
+    const adminCheck = localStorage.getItem("isAdmin");
+    if (!adminCheck) {
+      const password = prompt("Enter admin password (leave blank if not admin):");
+      if (password === adminPassword) {
+        setIsAdmin(true);
+        localStorage.setItem("isAdmin", "true");
+      }
+    } else if (adminCheck === "true") {
+      setIsAdmin(true);
+    }
   }, []);
 
   const handleStarClick = (rating) => {
@@ -37,14 +47,6 @@ export default function ReviewPage() {
       return;
     }
 
-    // Spam prevention: Check cooldown
-    const currentTime = Date.now();
-    if (lastSubmitTime && (currentTime - lastSubmitTime < COOLDOWN_PERIOD)) {
-      const timeLeft = Math.ceil((COOLDOWN_PERIOD - (currentTime - lastSubmitTime)) / 1000 / 60);
-      alert(`Please wait ${timeLeft} minute(s) before submitting another review.`);
-      return;
-    }
-
     const newReview = {
       ...formData,
       name: formData.name || "Anonymous",
@@ -54,12 +56,15 @@ export default function ReviewPage() {
     const updatedReviews = [...reviews, newReview];
     setReviews(updatedReviews);
     localStorage.setItem("nailTechReviews", JSON.stringify(updatedReviews));
-    setLastSubmitTime(currentTime); // Update last submit time
     setSubmitted(true);
     setFormData({ nailTech: "", rating: 0, comment: "", name: "" });
   };
 
   const handleDelete = (id) => {
+    if (!isAdmin) {
+      alert("Only the admin can delete reviews!");
+      return;
+    }
     if (window.confirm("Are you sure you want to delete this review?")) {
       const updatedReviews = reviews.filter(review => review.id !== id);
       setReviews(updatedReviews);
@@ -70,7 +75,7 @@ export default function ReviewPage() {
   const groupedReviews = nailTechs.reduce((acc, tech) => {
     acc[tech] = reviews
       .filter(review => review.nailTech === tech)
-      .sort((a, b) => b.id - a.id); // Most recent first
+      .sort((a, b) => b.id - a.id);
     return acc;
   }, {});
 
@@ -78,12 +83,12 @@ export default function ReviewPage() {
     const techReviews = groupedReviews[tech];
     if (!techReviews || techReviews.length === 0) return 0;
     const totalRating = techReviews.reduce((sum, review) => sum + review.rating, 0);
-    return (totalRating / techReviews.length).toFixed(1); // Exact average
+    return (totalRating / techReviews.length).toFixed(1);
   };
 
   const renderAverageStars = (average) => {
-    const fullStars = Math.floor(average); // Full stars
-    const hasHalfStar = average % 1 >= 0.5; // Half star if >= 0.5
+    const fullStars = Math.floor(average);
+    const hasHalfStar = average % 1 >= 0.5;
     const stars = [];
 
     for (let i = 0; i < 5; i++) {
@@ -100,13 +105,11 @@ export default function ReviewPage() {
 
   return (
     <div className="review-container">
-      {/* Hero Section */}
       <section className="review-hero">
         <h1>Client Reviews</h1>
-        <p>Share your experience with our talented nail techs—your feedback makes us sparkle! 🌟</p>
+        <p>Share your experience with our talented nail techs—every good review helps them earn a small bonus and makes us sparkle! 🌟</p>
       </section>
 
-      {/* Review Form Section */}
       <section className="review-form-section">
         {!submitted ? (
           <form onSubmit={handleSubmit} className="review-form">
@@ -163,13 +166,12 @@ export default function ReviewPage() {
         ) : (
           <div className="thank-you">
             <h2>Thank You!</h2>
-            <p>Your review has been added below. Want to share more feedback?</p>
+            <p>Your review has been added below—your kind words help our nail techs earn a bonus! Want to share more feedback?</p>
             <button onClick={() => setSubmitted(false)} className="submit-btn">Add Another Review</button>
           </div>
         )}
       </section>
 
-      {/* Reviews Display Section */}
       <section className="reviews-display">
         <h2>All Reviews</h2>
         <div className="reviews-grid">
@@ -192,12 +194,14 @@ export default function ReviewPage() {
                     </div>
                     <p className="comment">{review.comment || "No comment provided."}</p>
                     <p className="reviewer">— {review.name} <span className="review-date">({review.date})</span></p>
-                    <button
-                      className="delete-btn"
-                      onClick={() => handleDelete(review.id)}
-                    >
-                      Delete
-                    </button>
+                    {isAdmin && (
+                      <button
+                        className="delete-btn"
+                        onClick={() => handleDelete(review.id)}
+                      >
+                        Delete
+                      </button>
+                    )}
                   </div>
                 ))
               ) : (
